@@ -30,4 +30,8 @@ public class FinalResult {
         }
         return totalPoints - positionScore;
     }
+
+    public double getSkiingTime() {
+        return this.skiingResult.pointsEarned();
+    }
 }

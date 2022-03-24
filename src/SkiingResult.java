@@ -1,11 +1,12 @@
-public class SkiingResult implements  IEvent{
+public class SkiingResult implements IEvent {
     private int position;
     private double lap1;
     private double lap2;
     private double lap3;
     private double lap4;
     private int penalties;
-    public SkiingResult(int position, double lap1, double lap2, double lap3, double lap4, int penalties){
+
+    public SkiingResult(int position, double lap1, double lap2, double lap3, double lap4, int penalties) {
         this.position = position;
         this.lap1 = lap1;
         this.lap2 = lap2;

@@ -34,4 +34,8 @@ public class FinalResult {
     public double getSkiingTime() {
         return this.skiingResult.pointsEarned();
     }
+
+    public double getShootingPoints() {
+        return this.shootingResult.pointsEarned();
+    }
 }

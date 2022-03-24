@@ -14,4 +14,8 @@ public class Athlete {
     public boolean betterShooter(Athlete other) {
         return (this.finalResult.getShootingPoints() > other.finalResult.getShootingPoints());
     }
+
+    public boolean hasBeaten(Athlete other) {
+        return (this.betterSkiier(other) || this.betterShooter(other));
+    }
 }

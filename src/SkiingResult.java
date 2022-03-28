@@ -1,23 +1,25 @@
+import java.util.LinkedList;
+
 public class SkiingResult implements IEvent {
     private int position;
-    private double lap1;
-    private double lap2;
-    private double lap3;
-    private double lap4;
     private int penalties;
+    private LinkedList<Double> laps;
 
     public SkiingResult(int position, double lap1, double lap2, double lap3, double lap4, int penalties) {
         this.position = position;
-        this.lap1 = lap1;
-        this.lap2 = lap2;
-        this.lap3 = lap3;
-        this.lap4 = lap4;
+        laps.add(lap1);
+        laps.add(lap2);
+        laps.add(lap3);
+        laps.add(lap4);
         this.penalties = penalties;
     }
 
     @Override
     public double pointsEarned() {
-        return lap1 + lap2 + lap3 + lap4;
+        double sum = 0;
+        for(double d: laps)
+            sum+=d;
+        return sum;
     }
 
     @Override

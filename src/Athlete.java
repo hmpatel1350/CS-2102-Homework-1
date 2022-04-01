@@ -1,8 +1,10 @@
 public class Athlete {
     private FinalResult finalResult;
+    private String name;
 
-    public Athlete(FinalResult finalResult) {
+    public Athlete(FinalResult finalResult, String name) {
         this.finalResult = finalResult;
+        this.name = name;
     }
 
     public boolean betterSkiier(Athlete other) {

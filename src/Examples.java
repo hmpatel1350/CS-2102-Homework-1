@@ -15,8 +15,8 @@ public class Examples {
     FinalResult fResult1 = new FinalResult(shootingResult1, skiingResult1);
     FinalResult fResult2 = new FinalResult(shootingResult2, skiingResult2);
 
-    Athlete jerry = new Athlete(fResult1);
-    Athlete larry = new Athlete(fResult2);
+    Athlete jerry = new Athlete(fResult1, "Jerry");
+    Athlete larry = new Athlete(fResult2, "Larry");
 
 
     @Test

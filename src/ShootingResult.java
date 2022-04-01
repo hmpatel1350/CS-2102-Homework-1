@@ -1,26 +1,37 @@
-public class ShootingResult implements IEvent {
-    private ShootingRound round1;
-    private ShootingRound round2;
-    private ShootingRound round3;
-    private ShootingRound round4;
+import java.util.LinkedList;
 
-    public ShootingResult(ShootingRound round1, ShootingRound round2, ShootingRound round3, ShootingRound round4) {
-        this.round1 = round1;
-        this.round2 = round2;
-        this.round3 = round3;
-        this.round4 = round4;
+public class ShootingResult implements IEvent {
+    private LinkedList<ShootingRound> rounds;
+
+    public ShootingResult(LinkedList<ShootingRound> rounds) {
+        this.rounds = rounds;
     }
 
     @Override
     public double pointsEarned() {
-        return round1.getHit() + round2.getHit() + round3.getHit() + round4.getHit();
+        int i = 0;
+        for(ShootingRound sr: rounds)
+            i+=sr.getHit();
+        return i;
     }
 
     @Override
     public double getPenalties() {
-        int MAX_POINTS = 20; //5 from each round;
+        int MAX_POINTS = 5 * rounds.size();
         return 60 * (MAX_POINTS - pointsEarned());
     }
 
+    public ShootingRound bestRoundByType(boolean standing){
+        ShootingRound best = null;
+        for(ShootingRound sr: rounds){
+            if(sr.isStanding() == standing){
+                if(best == null)
+                    best = sr;
+                else if(best.getHit() < sr.getHit())
+                    best = sr;
+            }
+        }
+        return best;
+    }
 
 }

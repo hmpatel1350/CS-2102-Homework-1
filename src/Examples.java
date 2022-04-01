@@ -2,12 +2,30 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import java.util.LinkedList;
+
 public class Examples {
 
-    ShootingResult shootingResult1 = new ShootingResult(new ShootingRound(5), new ShootingRound(2),
-            new ShootingRound(1), new ShootingRound(0));
-    ShootingResult shootingResult2 = new ShootingResult(new ShootingRound(5), new ShootingRound(2),
-            new ShootingRound(4), new ShootingRound(3));
+    LinkedList<ShootingRound> rounds1(){
+        LinkedList<ShootingRound> rounds = new LinkedList<>();
+        rounds.add(new ShootingRound(5, true));
+        rounds.add(new ShootingRound(2, true));
+        rounds.add(new ShootingRound(1, true));
+        rounds.add(new ShootingRound(0, true));
+        return rounds;
+    }
+
+    public LinkedList<ShootingRound> rounds2(){
+        LinkedList<ShootingRound> rounds = new LinkedList<>();
+        rounds.add(new ShootingRound(5, true));
+        rounds.add(new ShootingRound(2, true));
+        rounds.add(new ShootingRound(4, true));
+        rounds.add(new ShootingRound(3, true));
+        return rounds;
+    }
+
+    ShootingResult shootingResult1 = new ShootingResult(rounds1());
+    ShootingResult shootingResult2 = new ShootingResult(rounds2());
 
     SkiingResult skiingResult1 = new SkiingResult(1, 45.2, 43.7, 39.9, 47.8, 0);
     SkiingResult skiingResult2 = new SkiingResult(2, 45.1, 43.7, 39.9, 47.8, 3);

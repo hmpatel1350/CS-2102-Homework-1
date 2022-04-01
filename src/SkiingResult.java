@@ -7,6 +7,7 @@ public class SkiingResult implements IEvent {
 
     public SkiingResult(int position, double lap1, double lap2, double lap3, double lap4, int penalties) {
         this.position = position;
+        laps = new LinkedList<>();
         laps.add(lap1);
         laps.add(lap2);
         laps.add(lap3);

@@ -97,4 +97,6 @@ public class Examples {
         assertFalse(jerry.hasBeaten(larry));
     }
 
+    // End of test cases for HW 1, after this are new test cases created for HW 2
+
 }

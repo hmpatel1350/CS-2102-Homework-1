@@ -1,3 +1,10 @@
+/**
+ * Represents a mass start skiing event
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public class MassStartResult extends AbsSkiingEventResult implements IEvent{
     int startingPosition;
 

@@ -1,6 +1,13 @@
+/**
+ * Represents an athlete that can compete in events
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public class Athlete {
-    private FinalResult finalResult;
-    private String name;
+    private final FinalResult finalResult;
+    private final String name;
 
     public Athlete(FinalResult finalResult, String name) {
         this.finalResult = finalResult;

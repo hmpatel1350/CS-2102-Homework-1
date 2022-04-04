@@ -1,6 +1,13 @@
+/**
+ * Represents the combined results of all events from an athlete
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public class FinalResult {
-    private ShootingResult shootingResult;
-    private SkiingResult skiingResult;
+    private final ShootingResult shootingResult;
+    private final SkiingResult skiingResult;
 
     public FinalResult(ShootingResult shootingResult, SkiingResult skiingResult) {
         this.shootingResult = shootingResult;

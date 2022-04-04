@@ -1,4 +1,11 @@
+/**
+ * Represents any event with points and penalties
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public interface IEvent {
-    public double pointsEarned();
-    public double getPenalties();
+    double pointsEarned();
+    double getPenalties();
 }

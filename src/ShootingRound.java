@@ -1,6 +1,13 @@
+/**
+ * Represents one round of a shooting event
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public class ShootingRound {
-    private int hit;
-    private boolean standing;
+    private final int hit;
+    private final boolean standing;
 
     public ShootingRound(int hit, boolean standing) {
         this.hit = hit;

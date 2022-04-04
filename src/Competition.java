@@ -1,21 +1,28 @@
 import java.util.LinkedList;
 
+/**
+ * Represents a competition
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public class Competition {
-    private int numOfShootRounds;
-    private LinkedList<Athlete> athletes;
+    private final int numOfShootRounds;
+    private final LinkedList<Athlete> athletes;
 
     public Competition(int numOfShootRounds, LinkedList<Athlete> athletes) {
         this.numOfShootRounds = numOfShootRounds;
         this.athletes = athletes;
     }
 
-    public LinkedList<Athlete> shootingDNF(){
-        LinkedList<Athlete> dnf = new LinkedList<>();
+    public LinkedList<String> shootingDNF(){
+        LinkedList<String> dnf = new LinkedList<>();
         for(Athlete a: athletes) {
             FinalResult fr = a.getFinalResult();
             ShootingResult sh = fr.getShootingResult();
             if(sh.getRounds().size()<numOfShootRounds)
-                dnf.add(a);
+                dnf.add(a.getName());
         }
         return dnf;
     }
@@ -36,7 +43,6 @@ public class Competition {
         return false;
     }
 
-
     public int getNumOfShootRounds() {
         return numOfShootRounds;
     }
@@ -44,4 +50,5 @@ public class Competition {
     public LinkedList<Athlete> getAthletes() {
         return athletes;
     }
+
 }

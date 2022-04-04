@@ -1,10 +1,17 @@
 import java.util.LinkedList;
 
+/**
+ * Represents any skiing event
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public class AbsSkiingEventResult implements IEvent{
 
-    private int position;
-    private int penalties;
-    private LinkedList<Double> laps;
+    private final int position;
+    private final int penalties;
+    private final LinkedList<Double> laps;
 
     public AbsSkiingEventResult(int position, double lap1, double lap2, double lap3, double lap4, int penalties) {
         this.position = position;

@@ -1,7 +1,14 @@
 import java.util.LinkedList;
 
+/**
+ * Represents the results of a shooting event
+ *
+ * @author ejstump Edward Stump
+ * @author hmpatel Harsh Patel
+ *
+ */
 public class ShootingResult implements IEvent {
-    private LinkedList<ShootingRound> rounds;
+    private final LinkedList<ShootingRound> rounds;
 
     public ShootingResult(LinkedList<ShootingRound> rounds) {
         this.rounds = rounds;

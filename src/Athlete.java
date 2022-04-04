@@ -42,11 +42,7 @@ public class Athlete {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Athlete athlete = (Athlete) o;
-        return Objects.equals(finalResult, athlete.finalResult) && Objects.equals(name, athlete.name);
+        return Objects.equals(name, athlete.name);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(finalResult, name);
-    }
 }

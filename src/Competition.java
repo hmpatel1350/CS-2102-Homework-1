@@ -36,7 +36,7 @@ public class Competition {
 
     public boolean anyImprovement(Competition c){
         for(Athlete a: athletes){
-            Athlete old = c.athletes.get(c.athletes.indexOf(a));
+            Athlete old = c.athletes.get(c.athletes.indexOf(a)); //Index of uses .equals() in Athlete, which uses name
             if(old.getFinalResult().finalScore()<a.getFinalResult().finalScore())
                 return true;
         }

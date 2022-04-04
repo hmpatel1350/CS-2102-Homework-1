@@ -34,4 +34,7 @@ public class ShootingResult implements IEvent {
         return best;
     }
 
+    public LinkedList<ShootingRound> getRounds() {
+        return rounds;
+    }
 }

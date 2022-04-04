@@ -38,4 +38,12 @@ public class FinalResult {
     public double getShootingPoints() {
         return this.shootingResult.pointsEarned();
     }
+
+    public ShootingResult getShootingResult() {
+        return shootingResult;
+    }
+
+    public SkiingResult getSkiingResult() {
+        return skiingResult;
+    }
 }

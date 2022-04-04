@@ -20,4 +20,11 @@ public class Athlete {
     public boolean hasBeaten(Athlete other) {
         return (this.betterSkiier(other) || this.betterShooter(other));
     }
+
+    public FinalResult getFinalResult() {
+        return finalResult;
+    }
+    public String getName() {
+        return name;
+    }
 }

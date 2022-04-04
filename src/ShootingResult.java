@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Objects;
 
 /**
  * Represents the results of a shooting event
@@ -43,5 +44,18 @@ public class ShootingResult implements IEvent {
 
     public LinkedList<ShootingRound> getRounds() {
         return rounds;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ShootingResult that = (ShootingResult) o;
+        return Objects.equals(rounds, that.rounds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rounds);
     }
 }

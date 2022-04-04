@@ -43,12 +43,11 @@ public class Competition {
         return false;
     }
 
-    public int getNumOfShootRounds() {
-        return numOfShootRounds;
-    }
-
-    public LinkedList<Athlete> getAthletes() {
-        return athletes;
-    }
+    /*
+    I think the code for finalScoreForAthlete and anyImprovement are pretty good and don't really need any additional
+    helper functions that could be created that could be used in both of them, at least with the way we implemented
+    the two methods. All that is really shared is looping through the athletes list, but that wouldn't require a helper
+    function.
+     */
 
 }

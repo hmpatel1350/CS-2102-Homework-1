@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Represents one round of a shooting event
  *
@@ -20,5 +22,18 @@ public class ShootingRound {
 
     public boolean isStanding() {
         return standing;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ShootingRound that = (ShootingRound) o;
+        return hit == that.hit && standing == that.standing;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hit, standing);
     }
 }

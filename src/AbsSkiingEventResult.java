@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Objects;
 
 /**
  * Represents any skiing event
@@ -39,4 +40,18 @@ public class AbsSkiingEventResult implements IEvent{
     public int getPosition() {
         return position;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbsSkiingEventResult that = (AbsSkiingEventResult) o;
+        return position == that.position && penalties == that.penalties && Objects.equals(laps, that.laps);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(position, penalties, laps);
+    }
 }
+

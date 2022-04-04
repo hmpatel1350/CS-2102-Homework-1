@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Represents the combined results of all events from an athlete
  *
@@ -52,5 +54,18 @@ public class FinalResult {
 
     public SkiingResult getSkiingResult() {
         return skiingResult;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FinalResult that = (FinalResult) o;
+        return Objects.equals(shootingResult, that.shootingResult) && Objects.equals(skiingResult, that.skiingResult);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(shootingResult, skiingResult);
     }
 }

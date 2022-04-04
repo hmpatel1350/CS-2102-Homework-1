@@ -2,12 +2,12 @@ import java.util.LinkedList;
 
 public class CompileCheck {
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		//Order of parameters in MassStartResult: starting position, finishing position, four laps, number of penalties
 		MassStartResult dummyRun = new MassStartResult(3, 2, 1.0, 2.0, 3.0, 4.0, 3);
 		double runSum = dummyRun.pointsEarned();
-		
+
 		LinkedList<ShootingRound> rounds = new LinkedList<>();
 		ShootingRound b1 = new ShootingRound(0, true);
 		ShootingRound b2 = new ShootingRound(4, false);
@@ -32,15 +32,15 @@ public class CompileCheck {
 
 		ShootingResult result1 = new ShootingResult(rounds);
 		ShootingResult result2 = new ShootingResult(rounds2);
-		
+
 		ShootingRound sh1 = result1.bestRoundByType(true);
 
 		SkiingResult dummySkiResult = new SkiingResult(2, 1.0, 2.0, 3.0, 4.0, 3);
 		double skiSum = dummySkiResult.pointsEarned();
-		
+
 		FinalResult finalResult = new FinalResult(result1, dummySkiResult);
 		double x = finalResult.finalScore();
-		
+
 		Athlete a1 = new Athlete(finalResult, "Athlete1");
 		Athlete a2 = new Athlete(finalResult, "Athlete2");
 
@@ -53,7 +53,7 @@ public class CompileCheck {
 		LinkedList<String> test1 = comp.shootingDNF();
 		boolean test2 = comp.anyImprovement(comp);
 		double test5 = comp.finalScoreForAthlete("Athlete1");
-		
+
 		System.out.println("Congrats! Your program compiled and ran!");
 	}
 }

@@ -37,7 +37,7 @@ public class Competition {
     public boolean anyImprovement(Competition c){
         for(Athlete a: athletes){
             Athlete old = c.athletes.get(c.athletes.indexOf(a)); //Index of uses .equals() in Athlete, which uses name
-            if(old.getFinalResult().finalScore()<a.getFinalResult().finalScore())
+            if(old.getFinalResult().finalScore() < a.getFinalResult().finalScore())
                 return true;
         }
         return false;
@@ -48,6 +48,12 @@ public class Competition {
     helper functions that could be created that could be used in both of them, at least with the way we implemented
     the two methods. All that is really shared is looping through the athletes list, but that wouldn't require a helper
     function.
+     */
+
+    /*
+    Looking at the two above methods, some code could have been shared between them. In fact, anyImprovement could have
+    used finalScoreForAthlete as a helper method by finding the name first and then getting the score of the athlete
+    with the given name, as long as the case that a -1 was returned was handled.
      */
 
 }

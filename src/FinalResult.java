@@ -8,8 +8,8 @@ import java.util.Objects;
  *
  */
 public class FinalResult {
-    private final ShootingResult shootingResult;
-    private final SkiingResult skiingResult;
+    final ShootingResult shootingResult;
+    final SkiingResult skiingResult;
 
     public FinalResult(ShootingResult shootingResult, SkiingResult skiingResult) {
         this.shootingResult = shootingResult;

@@ -10,9 +10,9 @@ import java.util.Objects;
  */
 public class AbsSkiingEventResult implements IEvent{
 
-    final int position;
-    final int penalties;
-    final LinkedList<Double> laps;
+    int position;
+    int penalties;
+    LinkedList<Double> laps;
 
     public AbsSkiingEventResult(int position, double lap1, double lap2, double lap3, double lap4, int penalties) {
         this.position = position;

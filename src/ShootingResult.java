@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  */
 public class ShootingResult implements IEvent {
-    final LinkedList<ShootingRound> rounds;
+    LinkedList<ShootingRound> rounds;
 
     public ShootingResult(LinkedList<ShootingRound> rounds) {
         this.rounds = rounds;

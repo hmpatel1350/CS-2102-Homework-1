@@ -8,8 +8,8 @@ import java.util.Objects;
  *
  */
 public class Athlete {
-    final FinalResult finalResult;
-    final String name;
+    FinalResult finalResult;
+    String name;
 
     public Athlete(FinalResult finalResult, String name) {
         this.finalResult = finalResult;

@@ -8,8 +8,8 @@ import java.util.Objects;
  *
  */
 public class ShootingRound {
-    final int hit;
-    final boolean standing;
+    int hit;
+    boolean standing;
 
     public ShootingRound(int hit, boolean standing) {
         this.hit = hit;

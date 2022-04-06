@@ -8,8 +8,8 @@ import java.util.LinkedList;
  *
  */
 public class Competition {
-    final int numOfShootRounds;
-    final LinkedList<Athlete> athletes;
+    int numOfShootRounds;
+    LinkedList<Athlete> athletes;
 
     public Competition(int numOfShootRounds, LinkedList<Athlete> athletes) {
         this.numOfShootRounds = numOfShootRounds;

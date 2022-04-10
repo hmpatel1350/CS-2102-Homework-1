@@ -53,8 +53,4 @@ class ShowSummary {
 		return true; //Returns true if all tests passed
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(daytime, primetime, latenight);
-	}
 }

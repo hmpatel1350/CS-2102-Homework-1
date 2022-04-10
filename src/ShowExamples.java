@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class ShowExamples 
 {
 	ShowManager1 sm1 = new ShowManager1();
+	ShowManager2 sm2 = new ShowManager2();
 	LinkedList<Show> shows = new LinkedList<Show>();
 	ShowSummary report1 = new ShowSummary();
 
@@ -74,10 +75,24 @@ public class ShowExamples
 
 
 	@Test
-	public void instructorTestOrganizeShows() 
+	public void instructorTestOrganizeShows()
 	{
 		ShowSummary report2 = sm1.organizeShows(shows);
 		assertEquals(report1, report2);
 	}
+
+	@Test
+	public void instructorTestOrganizeShows2()
+	{
+		ShowSummary report2 = sm2.organizeShows(shows);
+		assertEquals(report1, report2);
+	}
+
+	/*
+	Problem 1 Subtasks:
+	1. Ignore all special broadcasts
+	2. Place all the shows into the correct LinkedList based on broadcastTime
+	3. Return a ShowSummary with shows in the correct LinkedLists
+	 */
 
 }

@@ -23,11 +23,13 @@ class Earthquake1 {
      */
     public LinkedList<MaxHzReport> dailyMaxForMonth(LinkedList<Double> data, int month) {
         LinkedList<MaxHzReport> report = new LinkedList<>();
+        int date = 0;
         for(double d: data){
             if(isDate(d)){
-                if(month == extractMonth(d))
+                date = extractMonth(d);
+                if(month == date)
                     report.add(new MaxHzReport(d, Integer.MIN_VALUE));
-            }else if(d >= 0 && report.size()>0){
+            }else if(d >= 0 && report.size()>0 && date == month){
                 report.getLast().maxReading = Double.max(report.getLast().maxReading, d);
             }
         }

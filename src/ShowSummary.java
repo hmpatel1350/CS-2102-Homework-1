@@ -21,6 +21,18 @@ class ShowSummary {
 		this.latenight = latenight;
 	}
 
+	/**
+	 * Checks to see if two ShowSummary objects are equal
+	 * @param o Object
+	 * @return True if the two summaries are equal, false if they are not
+	 * Criteria For Equal:
+	 * 1. "Each pair of corresponding lists (ex. daytime in the first instance and daytime in the second instance)
+	 *    have the same size."
+	 * 2. "Each pair of corresponding lists have the same shows in the same order."
+	 * 3. "A show in one list is considered the same as a show in the other list if only the title and broadcast time
+	 * 	  of each show matches. It is NOT necessary that the two shows are the same object in memory or that the other
+	 *    fields of the two shows match."
+	 */
 	@Override
 	public boolean equals(Object o) {
 		if (o == null || getClass() != o.getClass())

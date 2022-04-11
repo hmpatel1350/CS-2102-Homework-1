@@ -27,4 +27,13 @@ public class EarthquakeExamples {
                  E1.dailyMaxForMonth(threeDates, 11));
   }
 
+  	/*
+	Problem 2 Subtasks:
+	1. Determine if data is for day or vibration
+	2. Check if day is in correct month
+	3. Get the largest vibration of that day
+	4. Ignore negative vibrations
+	5. Return list of the largest vibrations every day for the month
+	 */
+
 }

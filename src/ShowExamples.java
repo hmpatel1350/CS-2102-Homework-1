@@ -10,11 +10,19 @@ public class ShowExamples
 	ShowManager2 sm2 = new ShowManager2();
 	LinkedList<Show> shows = new LinkedList<Show>();
 	ShowSummary report1 = new ShowSummary();
+	ShowSummary onlyOne = new ShowSummary();
+	ShowSummary wrongUneccessaryData = new ShowSummary();
+
 
 	Show startrek = new Show("Star Trek", 1800, 45.0, false);
 	Show futurama = new Show("Futurama", 1900, 23.0, false);
 	Show animaniacs = new Show("Animaniacs", 1630, 7.0, false);
 	Show sesamestreet = new Show("Sesame Street", 900, 60.0, false);
+
+	Show startrek2 = new Show("Star Trek", 1800, 46.0, true);
+	Show futurama2 = new Show("Futurama", 1900, 44.0, true);
+	Show animaniacs2 = new Show("Animaniacs", 1630, 91.0, true);
+	Show sesamestreet2 = new Show("Sesame Street", 900, 24.0, true);
 
 	public ShowExamples()
 	{
@@ -29,6 +37,14 @@ public class ShowExamples
 
 		shows.add(sesamestreet);
 		report1.daytime.add(sesamestreet);
+
+
+
+		wrongUneccessaryData.primetime.add(startrek2);
+		wrongUneccessaryData.primetime.add(futurama2);
+		wrongUneccessaryData.daytime.add(animaniacs2);
+		wrongUneccessaryData.daytime.add(sesamestreet2);
+
 	}
 	
 	@Test
@@ -88,6 +104,19 @@ public class ShowExamples
 		assertEquals(report1, report2);
 	}
 
+	@Test
+	public void testOnlyOne() {
+		ShowSummary report2 = new ShowSummary();
+		report2.latenight.add(startrek);
+		onlyOne.latenight.add(startrek);
+
+		assertTrue(report2.equals(onlyOne));
+	}
+
+	@Test
+	public void testWrongUnneccessaryData() {
+		assertTrue(report1.equals(wrongUneccessaryData));
+	}
 	/*
 	Problem 1 Subtasks:
 	1. Ignore all special broadcasts

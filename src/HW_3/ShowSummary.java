@@ -1,5 +1,6 @@
+package HW_3;
+
 import java.util.LinkedList;
-import java.util.Objects;
 
 class ShowSummary {
 	
@@ -22,7 +23,7 @@ class ShowSummary {
 	}
 
 	/**
-	 * Checks to see if two ShowSummary objects are equal
+	 * Checks to see if two HW_3.ShowSummary objects are equal
 	 * @param o Object
 	 * @return True if the two summaries are equal, false if they are not
 	 * Criteria For Equal:

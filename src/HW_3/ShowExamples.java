@@ -1,3 +1,5 @@
+package HW_3;
+
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -121,7 +123,7 @@ public class ShowExamples
 	Problem 1 Subtasks:
 	1. Ignore all special broadcasts
 	2. Place all the shows into the correct LinkedList based on broadcastTime
-	3. Return a ShowSummary with shows in the correct LinkedLists
+	3. Return a HW_3.ShowSummary with shows in the correct LinkedLists
 	 */
 
 }

@@ -1,3 +1,5 @@
+package HW_3;
+
 class MaxHzReport {
   double date;
   double maxReading;

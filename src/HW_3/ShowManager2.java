@@ -1,3 +1,5 @@
+package HW_3;
+
 import java.util.LinkedList;
 
 class ShowManager2 {
@@ -7,13 +9,13 @@ class ShowManager2 {
 	/**
 	 * Takes a list of shows and organizes them
 	 * @param shows LinkedList of Shows
-	 * @return ShowSummary of shows placed into daytime, primetime, or latenight
+	 * @return HW_3.ShowSummary of shows placed into daytime, primetime, or latenight
 	 *
 	 * Task Order:
-	 * 1. Create a new empty ShowSummary (aka one with no shows currently stored in any LinkedList)
+	 * 1. Create a new empty HW_3.ShowSummary (aka one with no shows currently stored in any LinkedList)
 	 * 2. Loop through the list of shows and ignore any that are special
-	 * 3. For all shows that aren't special, check the broadcast time and update the correct list in the ShowSummary
-	 * 4. Return the now filled ShowSummary
+	 * 3. For all shows that aren't special, check the broadcast time and update the correct list in the HW_3.ShowSummary
+	 * 4. Return the now filled HW_3.ShowSummary
 	 */
 	public ShowSummary organizeShows(LinkedList<Show> shows)
 	{

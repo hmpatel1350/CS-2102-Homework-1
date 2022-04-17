@@ -1,3 +1,5 @@
+package HW_3;
+
 import java.util.LinkedList;
 
 class Earthquake1 {
@@ -17,7 +19,7 @@ class Earthquake1 {
      * Task Order:
      * 1. Create LinkedList of MaxHzReports
      * 2. Loop through the data and check if it is a date
-     * 3. If it is a date in the correct month create a new MaxHzReport with that date and add it to the LinkedList
+     * 3. If it is a date in the correct month create a new HW_3.MaxHzReport with that date and add it to the LinkedList
      * 4. If it isn't a date check maxReading of most recent item in the LinkedList (or skip if there is currently
      *    no item in the LinkedList) and update the maxReading if the new data value is larger
      */

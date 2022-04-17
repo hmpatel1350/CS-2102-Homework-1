@@ -1,3 +1,5 @@
+package HW_2;
+
 /**
  * Represents a mass start skiing event
  *

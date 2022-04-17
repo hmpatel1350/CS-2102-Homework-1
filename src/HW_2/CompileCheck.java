@@ -1,10 +1,12 @@
+package HW_2;
+
 import java.util.LinkedList;
 
 public class CompileCheck {
 
 	public static void main(String[] args)
 	{
-		//Order of parameters in MassStartResult: starting position, finishing position, four laps, number of penalties
+		//Order of parameters in HW_2.MassStartResult: starting position, finishing position, four laps, number of penalties
 		MassStartResult dummyRun = new MassStartResult(3, 2, 1.0, 2.0, 3.0, 4.0, 3);
 		double runSum = dummyRun.pointsEarned();
 

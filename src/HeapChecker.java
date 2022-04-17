@@ -38,6 +38,7 @@ public class HeapChecker {
         IBinTree left = tree.left();
         IBinTree right = tree.right();
         if(tree.size()>0){
+            ents.add(tree.data());
             if(left.size()>0) {
                 ents.add(left.data());
                 addEnts(ents, left);

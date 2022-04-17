@@ -1,3 +1,5 @@
+package HW_2;
+
 /**
  * Represents the results of a skiing event
  *

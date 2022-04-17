@@ -1,3 +1,5 @@
+package HW_2;
+
 /**
  * Represents any event with points and penalties
  *

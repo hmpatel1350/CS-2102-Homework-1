@@ -1,3 +1,5 @@
+package HW_2;
+
 import java.util.LinkedList;
 import java.util.Objects;
 

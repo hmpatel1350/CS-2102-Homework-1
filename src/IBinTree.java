@@ -8,10 +8,13 @@ interface IBinTree {
  // returns depth of longest branch in the tree
  int height();
 
+ //Left branch
  IBinTree left();
 
+ //Right branch
  IBinTree right();
 
+ //Current node data
  int data();
 }
 

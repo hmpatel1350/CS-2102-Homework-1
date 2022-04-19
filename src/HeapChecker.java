@@ -2,17 +2,27 @@ import java.util.ArrayList;
 
 public class HeapChecker {
     public HeapChecker(){}
+
+    /**
+     *
+     * Checks if new bintree is a valid updated heap
+     *
+     * @param original Original heap
+     * @param ent Added value
+     * @param updated Updated bintree
+     * @return true if valid, false if not
+     */
     public boolean addEltTester(IHeap original, int ent, IBinTree updated) {
         /*Makes sure ent was added and no other ents were removed*/
         ArrayList<Integer> initial = getElements(original);
         ArrayList<Integer> added = getElements(updated);
-        initial.add(ent);
-        initial.sort(Integer::compareTo);
-        added.sort(Integer::compareTo);
-        if(!initial.equals(added))
+        initial.add(ent); //Adds ent to list of elements in original
+        initial.sort(Integer::compareTo); //Sorts elements from least to greatest
+        added.sort(Integer::compareTo); //Sorts elements from least to greatest
+        if(!initial.equals(added)) //Checks if lists are identical
             return false;
 
-        return isHeap(updated);
+        return isHeap(updated); //Checks if the bintree is a valid heap
     }
 
     public boolean remMinEltTester(IHeap original, int ent, IBinTree updated) {
@@ -28,38 +38,54 @@ public class HeapChecker {
         return isHeap(updated);
     }
 
+    /**
+     * Gets all the elements in a bintree
+     *
+     * @param tree IBintree
+     * @return All integers
+     */
     private ArrayList<Integer> getElements(IBinTree tree){
         ArrayList<Integer> ents = new ArrayList<>();
         addEnts(ents, tree);
         return ents;
     }
 
+    /**
+     * Adds current peak and checks left and right
+     *
+     * @param ents ArrayList to update
+     * @param tree Current Bintree
+     */
     private void addEnts(ArrayList<Integer> ents, IBinTree tree){
         IBinTree left = tree.left();
         IBinTree right = tree.right();
         if(tree.size()>0){
-            ents.add(tree.data());
+            ents.add(tree.data()); //Adds element to list
             if(left.size()>0) {
-                ents.add(left.data());
-                addEnts(ents, left);
+                addEnts(ents, left); //Checks left if not empty
             }
             if(right.size()>0) {
-                ents.add(right.data());
-                addEnts(ents, right);
+                addEnts(ents, right); //Checks right if not empty
             }
         }
     }
 
+    /**
+     * Determines if tree is a valid Heap
+     *
+     * @param tree
+     * @return
+     */
     private boolean isHeap(IBinTree tree){
         if(tree.size()>0) {
             IBinTree left = tree.left();
             IBinTree right = tree.right();
-            if (tree.data() > left.data() && tree.data() > right.data())
+            if (tree.data() > left.data() && tree.data() > right.data()) //If parent node is larger than any children
                 return false;
-            if(Math.abs(left.height()- right.height())>1)
+            if(Math.abs(left.height()- right.height())>1) //If the difference in branches is greater than 1
                 return false;
             return isHeap(left) && isHeap(right);
         }
-        return true;
+        return true; //If empty automatically valid
     }
 }

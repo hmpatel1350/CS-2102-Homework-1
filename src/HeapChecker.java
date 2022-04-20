@@ -19,18 +19,19 @@ public class HeapChecker {
         initial.add(ent); //Adds ent to list of elements in original
         initial.sort(Integer::compareTo); //Sorts elements from least to greatest
         added.sort(Integer::compareTo); //Sorts elements from least to greatest
-        if(!initial.equals(added)) //Checks if lists are identical
+        if(!initial.equals(added)) { //Checks if lists are identical
             return false;
+        }
 
         return isHeap(updated); //Checks if the bintree is a valid heap
     }
 
-    public boolean remMinEltTester(IHeap original, int ent, IBinTree updated) {
+    public boolean remMinEltTester(IHeap original, IBinTree updated) {
         /*Makes sure ent was removed and no other ents were removed*/
         ArrayList<Integer> initial = getElements(original);
         ArrayList<Integer> added = getElements(updated);
-        initial.remove(ent);
         initial.sort(Integer::compareTo);
+        initial.remove(0);
         added.sort(Integer::compareTo);
         if(!initial.equals(added))
             return false;
@@ -81,8 +82,6 @@ public class HeapChecker {
             IBinTree left = tree.left();
             IBinTree right = tree.right();
             if (tree.data() > left.data() && tree.data() > right.data()) //If parent node is larger than any children
-                return false;
-            if(Math.abs(left.height()- right.height())>1) //If the difference in branches is greater than 1
                 return false;
             return isHeap(left) && isHeap(right);
         }

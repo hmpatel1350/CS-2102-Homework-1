@@ -1,4 +1,4 @@
-import java.lang.Math;
+package HW_4;
 
 interface IBinTree {
  // determines whether element is in the tree

@@ -1,9 +1,11 @@
-public class TestHeap3 extends DataHeap {
+package HW_4;
+
+class TestHeap3 extends DataHeap {
     IHeap left;
     IHeap right;
 
     TestHeap3(int data, IHeap left, IHeap right) {
-        super(data, left, right);
+        super (data, left, right);
         this.left = left;
         this.right = right;
     }

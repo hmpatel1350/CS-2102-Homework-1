@@ -1,4 +1,6 @@
-public class DataBT implements IBinTree {
+package HW_4;
+
+class DataBT implements IBinTree {
     int data;
     IBinTree left;
     IBinTree right;
@@ -16,9 +18,19 @@ public class DataBT implements IBinTree {
         this.right = new MtBT();
     }
 
+    @Override
+    public IBinTree getLeft() {
+        return left;
+    }
+
+    @Override
+    public IBinTree getRight() {
+        return right;
+    }
+
     // determines whether this node or node in subtree has given element
     public boolean hasElt(int e) {
-        return this.data == e || this.left.hasElt(e) || this.right.hasElt(e);
+        return this.data == e || this.left.hasElt(e) || this.right.hasElt(e) ;
     }
 
     // adds 1 to the number of nodes in the left and right subtrees
@@ -29,20 +41,5 @@ public class DataBT implements IBinTree {
     // adds 1 to the height of the taller subtree
     public int height() {
         return 1 + Math.max(this.left.height(), this.right.height());
-    }
-
-    @Override
-    public IBinTree left(){
-        return left;
-    }
-
-    @Override
-    public IBinTree right(){
-        return right;
-    }
-
-    @Override
-    public int data(){
-        return data;
     }
 }

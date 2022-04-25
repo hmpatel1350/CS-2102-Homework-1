@@ -1,9 +1,20 @@
-public class MtHeap extends MtBT implements IHeap {
-    MtHeap() {
+package HW_4;
+
+class MtHeap extends MtBT implements IHeap {
+    MtHeap(){}
+
+    @Override
+    public IHeap getLeft() {
+        return null;
     }
 
     @Override
-    // If you add an element to a MtHeap, you create a new DataHeap
+    public IHeap getRight() {
+        return null;
+    }
+
+    @Override
+    // If you add an element to a HW_4.MtHeap, you create a new HW_4.DataHeap
     public IHeap addElt(int e) {
         return new DataHeap(e, new MtHeap(), new MtHeap());
     }

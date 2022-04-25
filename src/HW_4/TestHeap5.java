@@ -1,11 +1,13 @@
+package HW_4;
+
 import java.util.Random;
 
-public class TestHeap5 extends DataHeap {
+class TestHeap5 extends DataHeap {
     IHeap left;
     IHeap right;
 
     TestHeap5(int data, IHeap left, IHeap right) {
-        super(data, left, right);
+        super (data, left, right);
         this.left = left;
         this.right = right;
     }
@@ -13,6 +15,6 @@ public class TestHeap5 extends DataHeap {
     @Override
     public IHeap addElt(int e) {
         Random newElt = new Random();
-        return new TestHeap5(newElt.nextInt(), this.right, this.left);
+        return new TestHeap5 (newElt.nextInt(), this.right, this.left);
     }
 }

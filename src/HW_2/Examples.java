@@ -166,8 +166,8 @@ public class Examples {
     }
 
     /*
-     End of test cases for HW 1, after this are new test cases created for HW 2
-     The methods from HW 1 that were changed are proved to work by the above test methods still working, so no
+     End of HW_4.test cases for HW 1, after this are new HW_4.test cases created for HW 2
+     The methods from HW 1 that were changed are proved to work by the above HW_4.test methods still working, so no
      further testing is needed for some of them
      */
 

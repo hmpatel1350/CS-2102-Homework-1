@@ -1,7 +1,7 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class TodaysWeatherReport {
+public class TodaysWeatherReport implements Weather{
     private GregorianCalendar date;
     private LinkedList<Double> temperature;
     private LinkedList<Double> rainfall;
@@ -13,6 +13,7 @@ public class TodaysWeatherReport {
         this.rainfall = rainfall;
     }
 
+    @Override
     public double averageRainfall(){
         double avg = 0, count = 0;
         for(Double d: rainfall){
@@ -23,7 +24,7 @@ public class TodaysWeatherReport {
             return avg/count;
         else return 0;
     }
-
+    @Override
     public double averageTemperature(){
         double avg = 0, count = 0;
         for(Double d: temperature){
@@ -35,15 +36,9 @@ public class TodaysWeatherReport {
         else return 0;
     }
 
+    @Override
     public GregorianCalendar getDate() {
         return date;
     }
 
-    public LinkedList<Double> getTemperature() {
-        return temperature;
-    }
-
-    public LinkedList<Double> getRainfall() {
-        return rainfall;
-    }
 }

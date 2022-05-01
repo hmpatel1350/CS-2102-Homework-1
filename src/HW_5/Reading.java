@@ -1,3 +1,5 @@
+package HW_5;
+
 public class Reading {
     private Time time;
     private double temperature, rainfall;

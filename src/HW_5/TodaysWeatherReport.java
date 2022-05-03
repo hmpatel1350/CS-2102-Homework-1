@@ -4,9 +4,9 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class TodaysWeatherReport implements Weather{
-    private GregorianCalendar date;
-    private LinkedList<Double> temperature;
-    private LinkedList<Double> rainfall;
+    private final GregorianCalendar date;
+    private final LinkedList<Double> temperature;
+    private final LinkedList<Double> rainfall;
 
 
     public TodaysWeatherReport(GregorianCalendar date, LinkedList<Double> temperature, LinkedList<Double> rainfall) {

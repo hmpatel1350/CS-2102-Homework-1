@@ -1,17 +1,18 @@
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Scanner;
 
+/**
+ * Represents the data for an election, including the candidates and their current vote totals in a hash map.
+ *
+ * @author Edward Stump and Harsh Patel
+ */
 public class ElectionData {
-    private HashMap<String, Integer> ballot = new HashMap<>();
-    private LinkedList<HashMap<Integer, String>> votes = new LinkedList<>();
-    private Scanner keyboard = new Scanner(System.in);
+    private final HashMap<String, Integer> ballot = new HashMap<>();
+    private final LinkedList<HashMap<Integer, String>> votes = new LinkedList<>();
 
-    public ElectionData() {
-        this.ballot.put("Gompei", 0);
-        this.ballot.put("Husky", 0);
-    }
-
+    /**
+     * Prints out the current candidates
+     */
     public void printBallot() {
         System.out.println("The candidates are ");
         for (String s : ballot.keySet()) {
@@ -19,17 +20,15 @@ public class ElectionData {
         }
     }
 
-    /*
-    public void screen() {
-        this.printBallot();
-        System.out.println("Who do you want to vote for?");
-        String candidate = keyboard.next();
-        //votes.add(candidate);
-        System.out.println("You voted for " + candidate);
-    }
-
+    /**
+     * Processes a user's vote, adding them to the stored votes if they are valid votes
+     *
+     * @param one the first choice candidate
+     * @param two the second choice candidate
+     * @param three the third choice candidate
+     * @throws UnknownCandidateException thrown if a candidate is not on the ballot
+     * @throws DuplicateVotesException thrown if the same candidate is voted for multiple times
      */
-
     public void processVote(String one, String two, String three) throws UnknownCandidateException, DuplicateVotesException{
         HashMap<Integer, String> choices = new HashMap<>(3);
         if (ballot.containsKey(one))
@@ -51,24 +50,23 @@ public class ElectionData {
         votes.add(choices);
     }
 
+    /**
+     * Adds a given candidate to the ballot given that they are not already there
+     *
+     * @param candidate the candidate to be added
+     * @throws CandidateExistsException thrown if the candidate to be added is already there
+     */
     public void addCandidate(String candidate) throws CandidateExistsException {
         if(ballot.containsKey(candidate))
             throw new CandidateExistsException(candidate);
         else ballot.put(candidate, 0);
     }
 
-    /*
-    public int countVotes(String forcand) {
-        int numvotes = 0;
-        for (String s : votes) {
-            if (s.equals(forcand))
-                numvotes = numvotes+1;
-        }
-        return numvotes;
-    }
+    /**
+     * Finds the winner of the election, decided by the one with the most first choice votes
+     *
+     * @return the winning candidate's name
      */
-
-
     public String findWinnerMostFirstVotes(){
         ballot.replaceAll((i, s) -> 0);
 
@@ -79,16 +77,22 @@ public class ElectionData {
         String s = "";
         int count = Integer.MIN_VALUE;
         for(String candidate: ballot.keySet()){
-            if(ballot.get(candidate)>count)
+            if(ballot.get(candidate)>count) {
                 s = candidate;
+                count = ballot.get(candidate);
+            }
         }
-
         if(ballot.get(s)>votes.size()/2)
             return s;
         else return "Runoff required";
 
     }
 
+    /**
+     * Finds the winner of the election, decided by the one with the most 'points'
+     *
+     * @return the winning candidate's name
+     */
     public String findWinnerMostPoints(){
         ballot.replaceAll((i, s) -> 0);
 

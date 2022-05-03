@@ -18,12 +18,12 @@ class DataBT implements IBinTree {
         this.right = new MtBT();
     }
 
-    @Override
+
     public IBinTree getLeft() {
         return left;
     }
 
-    @Override
+
     public IBinTree getRight() {
         return right;
     }
@@ -41,5 +41,20 @@ class DataBT implements IBinTree {
     // adds 1 to the height of the taller subtree
     public int height() {
         return 1 + Math.max(this.left.height(), this.right.height());
+    }
+
+    @Override
+    public IBinTree left() {
+        return null;
+    }
+
+    @Override
+    public IBinTree right() {
+        return null;
+    }
+
+    @Override
+    public int data() {
+        return 0;
     }
 }

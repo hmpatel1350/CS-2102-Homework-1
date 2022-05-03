@@ -1,7 +1,8 @@
 package HW_5;
 
 public class Time {
-    private int hour, minute;
+    private final int hour;
+    private final int minute;
 
     public Time(int hour, int minute) {
         this.hour = hour;

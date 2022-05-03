@@ -3,12 +3,12 @@ package HW_4;
 class MtBT implements IBinTree {
     MtBT(){}
 
-    @Override
+
     public IBinTree getLeft() {
         return null;
     }
 
-    @Override
+
     public IBinTree getRight() {
         return null;
     }
@@ -25,6 +25,21 @@ class MtBT implements IBinTree {
 
     // returns 0 since empty tree has no branches
     public int height() {
+        return 0;
+    }
+
+
+    public IBinTree left() {
+        return null;
+    }
+
+    @Override
+    public IBinTree right() {
+        return null;
+    }
+
+    @Override
+    public int data() {
         return 0;
     }
 }

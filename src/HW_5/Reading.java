@@ -1,8 +1,9 @@
 package HW_5;
 
 public class Reading {
-    private Time time;
-    private double temperature, rainfall;
+    private final Time time;
+    private final double temperature;
+    private final double rainfall;
 
     public Reading(Time time, double temperature, double rainfall) {
         this.time = time;
